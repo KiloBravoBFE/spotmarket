@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('dateInput')?.addEventListener('change', function () {
         console.log("dateInput field changed");
-        console.log(this.value);
+        console.log(normalizeDate(this.value));
         console.log(this.min);
         console.log(this.max);
         if (normalizeDate(this.values) < this.min || normalizeDate(this.value) > this.max) {
