@@ -31,6 +31,7 @@ function setDateLimits() {
     const maxDate = new Date();
     if (now.getHours() >= 12) {
         maxDate.setDate(maxDate.getDate() + 1);
+        console.log("Max Date set to:" + maxDate);
     }
     
     input.min = formatDate(minDate);

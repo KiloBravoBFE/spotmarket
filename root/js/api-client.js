@@ -286,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('dateInput')?.addEventListener('change', function () {
         if (this.values < this.min || this.value > this.max) {
+            console.log("unathorised date");
             alert("Ungültiges Datum");
             this.value = "";
         }
