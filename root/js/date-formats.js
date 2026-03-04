@@ -95,11 +95,11 @@ function getInputDate() {
             console.log("Custom date:", customDate);
             inputDate = customDate;
             console.log("Using custom date:", inputDate);
-            return inputDate;
         } catch (err) {
             console.log("Error getting custom date:", err);
         }
     }
+    return inputDate;
 }
 
 export { normalizeDate, formatDate, setDateLimits, 
