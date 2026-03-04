@@ -59,4 +59,26 @@ function previousYearDate(rawDate) {
     return `${year - 1}${month}${day}`;
 }
 
-export { normalizeDate, formatDate, setDateLimits, getCustomDate, previousYearDate }
+function getInputDate() {
+    const rawDate = document.getElementById("dateInput")?.value;
+    console.log("Raw date:", rawDate);
+    let inputDate;
+    if (rawDate && rawDate.trim() !== "") {
+        inputDate = normalizeDate(rawDate);
+        console.log("Input date:", inputDate);
+    } else {
+        try {
+            console.log("Input date is null or undefined");
+            console.log("Attempting to get custom date");
+            let customDate = getCustomDate();
+            console.log("Custom date:", customDate);
+            inputdate = normalizeDate(customDate);
+            console.log("Using custom date:", inputDate);
+        } catch (err) {
+            console.err("Error getting custom date:", err);
+            alert("Error while calling custom date");
+        }
+    }
+}
+
+export { normalizeDate, formatDate, setDateLimits, getCustomDate, previousYearDate, getInputDate }

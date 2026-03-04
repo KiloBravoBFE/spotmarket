@@ -2,7 +2,7 @@
 import { loadTitleData } from './chart.js';
 import { normalizeDate, formatDate, 
     setDateLimits, getCustomDate, 
-    previousYearDate } from './date-formats.js';
+    previousYearDate, getInputDate } from './date-formats.js';
 
 let stromChart = null
 
@@ -137,25 +137,7 @@ function removeDatasetByLabel(label) {
 
 async function loadData() {
 
-    const rawDate = document.getElementById("dateInput")?.value;
-    console.log("Raw date:", rawDate);
-    let inputDate;
-    if (rawDate && rawDate.trim() !== "") {
-        inputDate = normalizeDate(rawDate);
-        console.log("Input date:", inputDate);
-    } else {
-        try {
-            console.log("Input date is null or undefined");
-            console.log("Attempting to get custom date");
-            let customDate = getCustomDate();
-            console.log("Custom date:", customDate);
-            inputDate = normalizeDate(customDate);
-            console.log("Using custom date:", inputDate);
-        } catch (err) {
-            console.log("Error getting custom date:", err);
-            alert("Fehler beim Abrufen des benutzerdefinierten Datums.");
-        }
-    } 
+    const inputDate = getInputDate();
 
     loadTitleData(inputDate);
 
@@ -299,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (e.target.checked) {
             console.log("Dayaverage checkbox is checked");
-            const date = normalizeDate(document.getElementById('dateInput')?.value);
+            const date = getInputDate();
             const response = await fetch(`${API_BASE}/dayAverage?date=${date}`);
             const data = await response.json();
 
@@ -328,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (e.target.checked) {
             console.log("Previous Year checkbox is checked");
-            const date = previousYearDate(document.getElementById('dateInput')?.value);
+            const date = getInputDate();
             const r = await fetch(`${API_BASE}/data?date=${date}`);
             const arr = await r.json();
             const vals = parsePriceArray(arr);
@@ -350,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (e.target.checked) {
             console.log("Workweek average checkbox is checked");
-            const date = normalizeDate(document.getElementById('dateInput')?.value);
+            const date = getInputDate();
             const response = await fetch(`${API_BASE}/workingDayAverage?date=${date}`);
             const data = await response.json();
 
@@ -375,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (e.target.checked) {
             console.log("Work Day Average Intervall checkbox is checked");
-            const date = normalizeDate(document.getElementById('dateInput')?.value);
+            const date = getInputDate();
             const response = await fetch(`${API_BASE}/workDayAverageIntervall?date=${date}`);
             const data = await response.json();
             const values = parsePriceArray(data);
