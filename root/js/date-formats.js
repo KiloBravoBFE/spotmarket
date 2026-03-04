@@ -59,7 +59,8 @@ function previousYearDate(rawDate) {
     return `${year - 1}${month}${day}`;
 }
 
-function previousYearDateFormat(date) {
+function previousYearDateFormat(attr_date) {
+    const date = String(attr_date);
     const year = parseInt(date.substring(0,4));
     const month = parseInt(date.substring(4,6));
     const day = parseInt(date.substring(6,8));
@@ -98,4 +99,5 @@ function getInputDate() {
     }
 }
 
-export { normalizeDate, formatDate, setDateLimits, getCustomDate, previousYearDateFormat, getInputDate }
+export { normalizeDate, formatDate, setDateLimits, 
+    getCustomDate, previousYearDateFormat, getInputDate }
