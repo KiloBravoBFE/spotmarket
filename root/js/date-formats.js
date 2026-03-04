@@ -59,6 +59,22 @@ function previousYearDate(rawDate) {
     return `${year - 1}${month}${day}`;
 }
 
+function previousYearDateFormat(date) {
+    const year = parseInt(date.substring(0,4));
+    const month = parseInt(date.substring(4,6));
+    const day = parseInt(date.substring(6,8));
+
+    const dateObj = new Date(year, month -1, day);
+
+    dateObj.setFullYear(dateObj.getFullYear() -1);
+
+    const previousYear = String(dateObj.getFullYear()).padStart(4, '0') +
+                        String(dateObj.getMonth() +1).padStart(2, '0') +
+                        String(dateObj.getDate()).padStart(2, '0');
+
+    return previousYear;
+}
+
 function getInputDate() {
     const rawDate = document.getElementById("dateInput")?.value;
     console.log("Raw date:", rawDate);
@@ -82,4 +98,4 @@ function getInputDate() {
     }
 }
 
-export { normalizeDate, formatDate, setDateLimits, getCustomDate, previousYearDate, getInputDate }
+export { normalizeDate, formatDate, setDateLimits, getCustomDate, previousYearDateFormat, getInputDate }
