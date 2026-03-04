@@ -87,6 +87,7 @@ function getInputDate() {
     if (rawDate && rawDate.trim() !== "") {
         inputDate = normalizeDate(rawDate);
         console.log("Input date:", inputDate);
+        return inputDate;
     } else {
         try {
             console.log("Input date is null or undefined");
@@ -95,11 +96,11 @@ function getInputDate() {
             console.log("Custom date:", customDate);
             inputDate = customDate;
             console.log("Using custom date:", inputDate);
+            return inputDate;
         } catch (err) {
             console.log("Error getting custom date:", err);
         }
     }
-    return inputDate;
 }
 
 export { normalizeDate, formatDate, setDateLimits, 
