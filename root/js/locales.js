@@ -1,15 +1,77 @@
 const translations = {
     de: {
-        title: "Analyse-Tool",
+        title: "Analysetool",
         dateLabel: "Datum:",
+        diagramHeader: "Diagramm für den:",
         comparisonLabel: "Vergleichstag",
-        avgOnDateLabel: "Tagesdurchschnitt (Datum)"
+        avgOnDateLabel: "Tagesmittel Vergleichstag",
+        avgDayToggle: "Tagesmittel anzeigen",
+        avgWDayToggle: "Werktagsmittel anzeigen",
+        prevYearToggle: "Vorjahresvergleich anzeigen (Intervall)",
+        prevWDYearToggle: "Vorjahresvergleich Werktage anzeigen (Intervall)",
+        showBtn: "Anzeigen",
+        delBtn: "Löschen",
+
+        headerMarketOvrvwURL: "Marktüberblick",
+        headerAnalysisToolURL: "Analysetool",
+        headerPricePrognosisURL: "Preisprognose",
+        headerNewsUpdURL: "News & Updates",
+        headerContactURL: "Kontakt",
+        headerLoginBtn: "Anmelden",
+        headerLangBtn: "Language",
+
+        diagramPriceLabel: "Strompreise",
+        diagramWDAvgIntervalLabel: "Werktagsdurchnitt (Intervall)",
+        diagramDAvg: "Tagesdurchschnitt",
+        diagramWDAvg: "Werktagsdurchschnitt",
+        diagramPrevYearWDAvg: "Vorjahresvergleich Werktage (Intervall)",
+        diagramPrevYearDAvg: "Vorjahresvergleich (Intervall)",
+        diagramXAxisLabel: "Zeit (15-Minuten-Intervalle)",
+        diagramYAxisLabel: "Preis (€/MWh)",
+
+        footerImprintURL: "Impressum",
+        footerPrivacyURL: "Datenschutz",
+        footerTermsURL: "AGB",
+        footerCopyright: "© 2025 ESMP - Alle Rechte vorbehalten."
     },
+
+
+
+
     en: {
         title: "Analysis Tool",
         dateLabel: "Date:",
+        diagramHeader: "Diagram for:",
         comparisonLabel: "Comparison Day",
-        avgOnDateLabel: "Day Average (Date)"
+        avgOnDateLabel: "Comparison Day Average",
+        avgDayToggle: "Show Daily Average",
+        avgWDayToggle: "Show Daily Average (Weekday)",
+        prevYearToggle: "Show Previous Year (Interval)",
+        prevWDYearToggle: "Show Previous Year Weekday Comparison (Interval)",
+        showBtn: "Show",
+        delBtn: "Delete",
+
+        headerMarketOvrvwURL: "Market Overview",
+        headerAnalysisToolURL: "Analysis Tool",
+        headerPricePrognosisURL: "Price Prognosis",
+        headerNewsUpdURL: "News & Updates",
+        headerContactURL: "Contact",
+        headerLoginBtn: "Login",
+        headerLangBtn: "Sprache",
+
+        diagramPriceLabel: "Electricity Prices",
+        diagramWDAvgIntervalLabel: "Weekday Average (Interval)",
+        diagramDAvg: "Daily Average",
+        diagramWDAvg: "Weekday Average",
+        diagramPrevYearWDAvg: "Previous Year Weekday Comparison (Interval)",
+        diagramPrevYearDAvg: "Previous Year Comparison (Interval)",
+        diagramXAxisLabel: "Time (15-Minute Intervals)",
+        diagramYAxisLabel: "Price (€/MWh)",
+        
+        footerImprintURL: "Imprint",
+        footerPrivacyURL: "Privacy Policy",
+        footerTermsURL: "ToS",
+        footerCopyright: "© 2025 ESMP - All rights reserved."
     }
 };
 

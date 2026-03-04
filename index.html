@@ -43,15 +43,15 @@
                             <td>
                                 <div>
                                     <input type="checkbox" id="cb_dayaverage" class="hidden-cb" checked="false">
-                                    <label for="cb_dayaverage" class="cb">AVG Day</label>
+                                    <label for="cb_dayaverage" class="cb" data-i18n="avgDayToggle"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <label>Comparison Day</label>
+                                    <label data-i18n="comparisonLabel"></label>
                                     <input type="date" id="comparison_dateInput" name="date" placeholder="2025-10-01" value="{{ selected_date}}"></i>
-                                    <button onclick="comparisonDay()">Show</button>
-                                    <button onclick="">Delete</button>
+                                    <button onclick="comparisonDay()" data-i18n="showBtn"></button>
+                                    <button onclick="" data-i18n="delBtn"></button>
                                 </div>
                             </td>
                         </tr>
@@ -59,15 +59,15 @@
                             <td>
                                 <div>
                                     <input type="checkbox" id="cb_workDayAverage" class="hidden-cb">
-                                    <label for="cb_workDayAverage" class="cb">AVG Working Days</label>
+                                    <label for="cb_workDayAverage" class="cb" data-i18n="avgWDayToggle"></label>
                                 </div>
                             </td>
                             <td>
                                 <i>
-                                    <label>AVG on Date</label>
+                                    <label data-i18n="avgOnDateLabel"></label>
                                     <input type="date" id="avgOnDate_dateInput" name="date" placeholder="2025-10-01" value="{{ selected_date}}"></i>
-                                    <button onclick="get_avgOnDate()">Show</button>
-                                    <button onclick="">Delete</button>
+                                    <button onclick="get_avgOnDate()" data-i18n="showBtn"></button>
+                                    <button onclick="" data-i18n="delBtn"></button>
                                 </div>
                             </td>
                         </tr>
@@ -75,7 +75,7 @@
                             <td>                                
                                 <div>
                                     <input type="checkbox" id="cb_previousYear" class="hidden-cb">
-                                    <label for="cb_previousYear" class="cb">previous Year (intervall)</label>
+                                    <label for="cb_previousYear" class="cb" data-i18n="prevYearToggle"></label>
                                 </div>
                             </td>
                         </tr>
@@ -83,7 +83,7 @@
                             <td>
                                 <div>
                                     <input type="checkbox" id="cb_workDayAverageIntervall" class="hidden-cb">
-                                    <label for="cb_workDayAverageIntervall" class="cb">AVG Working Days (intervall)</label>
+                                    <label for="cb_workDayAverageIntervall" class="cb" data-i18n="prevWDYearToggle"></label>
                                 </div>
                             </td>
                         </tr>

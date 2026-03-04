@@ -11,22 +11,20 @@
                 <button id="menuToggle" class="hamburger" aria-label="Menü öffnen">☰</button>
             </div>
             <nav>
-                <a href="{{url_for('marktueberblick')}}">Marktüberblick</a>
-                <a href="{{url_for('analyse')}}">Analyse-Tool</a>
-                <a href="#">Preisprognosen</a>
-                <a href="#">News &amp; Updates</a>
-                <a href="#">Kontakt</a>
+                <a href="{{url_for('marktueberblick')}}" data-i18n="headerMarketOvrvwURL"></a>
+                <a href="{{url_for('analyse')}}" data-i18n="headerAnalysisToolURL"></a>
+                <a href="#" data-i18n="headerPricePrognosisURL"></a>
+                <a href="#" data-i18n="headerNewsUpdURL"></a>
+                <a href="#" data-i18n="headerContactURL"></a>
             </nav>
             <div class="language-switcher">
-                <button class="btn btn-primary" id="langToggle">Language</button>
+                <button class="btn btn-primary" id="langToggle" data-i18n="headerLangBtn"></button>
                 <div class="lang-menu" id="langMenu">
-                    <button class="btn btn-primary" data-lang="de">Deutsch</button>
-                    <button class="btn btn-primary" data-lang="en">English</button>
+                    <button class="btn btn-primary" data-lang="de">Deutsch (DE)</button>
+                    <button class="btn btn-primary" data-lang="en">English (UK)</button>
                 </div>
             </div>
-            <button>
-                    Login
-            </button>
+            <button data-i18n="headerLoginBtn"></button>
         </header>
 
         <!-- Side-Menu (kommt von links) -->
@@ -37,11 +35,11 @@
             </div>
             <button id="closeMenu" class="side-menu-close" aria-label="Schließen">✕</button>
             <nav class="side-nav" style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
-                <a href="{{url_for('marktueberblick')}}">Marktüberblick</a>
-                <a href="{{url_for('analyse')}}">Analyse‑Tool</a>
-                <a href="#">Preisprognosen</a>
-                <a href="#">News &amp; Updates</a>
-                <a href="#">Kontakt</a>
+                <a href="{{url_for('marktueberblick')}}" data-i18n="headerMarketOvrvwURL"></a>
+                <a href="{{url_for('analyse')}}" data-i18n="headerAnalysisToolURL"></a>
+                <a href="#" data-i18n="headerPricePrognosisURL"></a>
+                <a href="#" data-i18n="headerNewsUpdURL"></a>
+                <a href="#" data-i18n="headerContactURL"></a>
             </nav>
             </aside>
                 <div id="menuBackdrop" class="menu-backdrop" hidden aria-hidden="true"></div>
