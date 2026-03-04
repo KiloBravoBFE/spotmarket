@@ -22,21 +22,22 @@ function parseDate(dateInput) {
 
 function parseDateDisplay(dateInput) {
     console.log("Attempting to parse date display for input:", dateInput);
+    const date = String(dateInput);
     try {
         let displayDate = '';
-        if (/^\d{4}-\d{2}-\d{2}$/.test(dateInput)) {
-            const year = dateInput.substring(0, 4);
-            const month = dateInput.substring(5, 7);
-            const day = dateInput.substring(8, 10);
+        if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+            const year = date.substring(0, 4);
+            const month = date.substring(5, 7);
+            const day = date.substring(8, 10);
 
             console.log("Year:", year, "Month:", month, "Day:", day);
 
             displayDate = `${day}.${month}.${year}`;
         }
-        if (/^\d{8}$/.test(dateInput)) {
-            const year = dateInput.substring(0, 4);
-            const month = dateInput.substring(4, 6);
-            const day = dateInput.substring(6, 8);
+        if (/^\d{8}$/.test(date)) {
+            const year = date.substring(0, 4);
+            const month = date.substring(4, 6);
+            const day = date.substring(6, 8);
 
             console.log("Year:", year, "Month:", month, "Day:", day);
 
