@@ -60,20 +60,24 @@ function previousYearDate(rawDate) {
 }
 
 function previousYearDateFormat(attr_date) {
-    const date = String(attr_date);
-    const year = parseInt(date.substring(0,4));
-    const month = parseInt(date.substring(4,6));
-    const day = parseInt(date.substring(6,8));
+    try {
+        const date = String(attr_date);
+        const year = parseInt(date.substring(0,4));
+        const month = parseInt(date.substring(4,6));
+        const day = parseInt(date.substring(6,8));
 
-    const dateObj = new Date(year, month -1, day);
+        const dateObj = new Date(year, month -1, day);
 
-    dateObj.setFullYear(dateObj.getFullYear() -1);
+        dateObj.setFullYear(dateObj.getFullYear() -1);
 
-    const previousYear = String(dateObj.getFullYear()).padStart(4, '0') +
-                        String(dateObj.getMonth() +1).padStart(2, '0') +
-                        String(dateObj.getDate()).padStart(2, '0');
-
-    return previousYear;
+        const previousYear = String(dateObj.getFullYear()).padStart(4, '0') +
+                            String(dateObj.getMonth() +1).padStart(2, '0') +
+                            String(dateObj.getDate()).padStart(2, '0');
+        console.log("returning date of previous year:", previousYear);
+        return previousYear;
+    } catch (err) {
+        console.log("Error formatting previous year date:", err);
+    }
 }
 
 function getInputDate() {
@@ -94,7 +98,6 @@ function getInputDate() {
             return inputDate;
         } catch (err) {
             console.log("Error getting custom date:", err);
-            alert("Error while calling custom date");
         }
     }
 }
