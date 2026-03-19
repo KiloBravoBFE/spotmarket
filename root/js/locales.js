@@ -93,23 +93,27 @@ const translations = {
 };
 
 function setLanguage(lang) {
-    // fallback to def
-    const activeLang = lang || getCurrentLanguage();
-    // store & apply
-    localStorage.setItem("lang", activeLang);
-    document.documentElement.lang = activeLang;
+    try {
+        // fallback to def
+        const activeLang = lang || getCurrentLanguage();
+        // store & apply
+        localStorage.setItem("lang", activeLang);
+        document.documentElement.lang = activeLang;
 
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.dataset.i18n;
-        if (translations[activeLang]?.[key]) {
-            el.textContent = translations[activeLang][key];
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.dataset.i18n;
+            if (translations[activeLang]?.[key]) {
+                el.textContent = translations[activeLang][key];
+            }
+        });
+
+        // update dynamic translations in other modules (e.g. chart)
+        if (typeof window.updateChartTranslations === "function") {
+            window.updateChartTranslations();
+            window.updateChartTitleTranslation();
         }
-    });
-
-    // update dynamic translations in other modules (e.g. chart)
-    if (typeof window.updateChartTranslations === "function") {
-        window.updateChartTranslations();
-        window.updateChartTitleTranslation();
+    } catch (error) {
+        console.error("Error setting language:", error);
     }
 }
 document.addEventListener("click", handleLanguageUI);
