@@ -30,7 +30,7 @@ const translations = {
         headerLoginBtn: "Anmelden",
         headerLangBtn: "Language",
 
-        diagramHeader: "Diagramm für den:",
+        diagramHeader: "Diagramm für den {date}",
         diagramHeaderEscape: "Unbekanntes Datum",
         diagramPriceLabel: "Strompreise",
         diagramWDAvgInterval: "Werktagsdurchnitt (Intervall)",
@@ -72,7 +72,7 @@ const translations = {
         headerLoginBtn: "Login",
         headerLangBtn: "Sprache",
 
-        diagramHeader: "Diagram for:",
+        diagramHeader: "Diagram for {date}",
         diagramHeaderEscape: "Unknown date",
         diagramPriceLabel: "Electricity Prices",
         diagramWDAvgInterval: "Weekday Average (Interval)",
